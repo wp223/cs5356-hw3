@@ -42,6 +42,11 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         img {
             width: 200px;
@@ -89,8 +94,9 @@
             <p>This is my personal website hosted on GitHub Pages.</p>
 
             <details>
-                <summary>Want to know a fun fact about me?</summary>
-                <p>I have done karate for 9 years!</p>
+                <summary>What have I learned about this interactive element?</summary>
+                <p>No JavaScript is needed! It's a pure HTML solution for collapsible sections.
+                <p>It remembers state - once expanded, it stays open until the user closes it.</p>
             </details>
         </section>
     </main>
