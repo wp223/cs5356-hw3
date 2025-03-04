@@ -5,20 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             margin: 50px;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        section {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         img {
             width: 200px;
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Page!</h1>
-    <img src="IMG_0117.JPEG" alt="My Photo">
-    <p>Hi! I'm Weilin. I like taking pictures! Here is a picture I took at Roosevelt Island in the fall.</p>
-    <p>This is my personal website hosted on GitHub Pages.</p>
+    <header>
+        <h1>Welcome to My Page!</h1>
+    </header>
+
+    <main>
+        <section>
+            <img src="IMG_0117.JPEG" alt="My Photo">
+            <h2>About Me</h2>
+            <p>Hi! I'm <strong> Weilin Pan</strong>. I like <em>taking pictures</em>!</p>
+            <p>This is my personal website hosted on GitHub Pages.</p>
+        </section>
+    </main>
+   
+    <footer>
+        <p>%copy; 2025 Weilin. All rights reserved.</p>
+    </footer>
+    
 </body>
 </html>
