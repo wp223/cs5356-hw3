@@ -87,7 +87,7 @@
     </header>
 
     <main>
-        <section>
+        <section id="intro-section">
             <img src="IMG_0117.JPEG" alt="My Photo">
             <h2>About Me</h2>
             <p>Hi! I'm <strong> Weilin Pan</strong>. I like <em>taking pictures</em>!</p>
@@ -105,11 +105,45 @@
                 <p>Applying transitions to multiple properties creates a layered effect.</p>
             </details>
         </section>
+
+        <section id="artworks-section">
+            
+        </section>
     </main>
    
     <footer>
         <p>&copy; 2025 Weilin. All rights reserved.</p>
     </footer>
+
+    <script>
+        fetch('https://api.artic.edu/api/v1/artworks/search?q=cats')
+            .then(response => response.json())
+            .then(data =>{
+                const artworks = data.data;
+                const section = document.getElementById('artworks-section');
+
+                artworks.forEach(artwork => {
+                    const artworkElement = document.createElement('section');
+                    artworkElement.style.textAlign = 'center';
+
+                    const title = document.createElement('h3');
+                    title.innerText = artwork.title || 'Untitled';
+                    artworkElement.appendChild(title);
+
+                    const image = document.createElement('img');
+                    const imageUrl = artwork.thumbnail
+                        ? artwork.thumbnail
+                        : 'https://via.placeholder.com/200';
+                    image.src = imageUrl;
+                    artworkElement.appendChild(image);
+
+                    section.appendChild(artworkElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
 
 </body>
 </html>
