@@ -150,18 +150,6 @@
                     title.innerText = artwork.title || 'Untitled';
                     artworkElement.appendChild(title);
 
-                    const image = document.createElement('img');
-                    const imageUrl = artwork.thumbnail
-                        ? artwork.thumbnail
-                        : 'https://via.placeholder.com/200';
-                    image.src = imageUrl;
-                    artworkElement.appendChild(image);
-
-                    const link = document.createElement('a');
-                    link.href = artwork.api_link;
-                    link.innerText = 'View artwork details';
-                    link.target = '_blank';
-                    artworkElement.appendChild(link);
 
                     section.appendChild(artworkElement);
                 });
